@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd ">
+
+	<bean id="SqlBean" class="com.saket.helper.DbQueries">
+		<property name="insertQuery"
+			value="INSERT INTO user(user_name,password) VALUES(?,?)"></property>
+		<property name="searchQuery" value="SELECT * from user where user_name = ?"></property>
+		<property name="changePasswordQuery"
+			value="UPDATE user set password = newpassword where user_name = ?"></property>
+	</bean>
+</beans>
